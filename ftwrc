@@ -79,9 +79,9 @@ config-offline() {
     # Enable wireless adapter power saving?
     WIRELESS_POWER_SAVE=on
 
-    # Dim Backlight to save power? Check 
-    /sys/class/backlight/acpi_video0/max_brightness for max value.
-    BRIGHTNESS=11
+    # Dim Backlight to save power? For max value (min is 0), check 
+    # /sys/class/backlight/acpi_video0/max_brightness.
+    BRIGHTNESS=12
 }
 
 #custom-offline() {
