@@ -82,6 +82,9 @@ config-offline() {
     # Dim Backlight to save power? For max value (min is 0), check 
     # /sys/class/backlight/acpi_video0/max_brightness.
     BRIGHTNESS=12
+
+    # Disable Wake on LAN? d=disable, for all other options see man ethtool
+    WAKE_ON_LAN=d
 }
 
 #custom-offline() {
@@ -106,6 +109,7 @@ config-online() {
     SND_AC97_POWER_SAVE=0
     WIRELESS_POWER_SAVE=off
     BRIGHTNESS=15
+    WAKE_ON_LAN=g
 }
 
 #custom-online() {
