@@ -12,7 +12,7 @@ PARTITIONS=/dev/sd*
 # and HD_SPINDOWN_TIMEOUT.
 DEVICES=/dev/sd?
 
-config-offline() {
+config-bat() {
     # CPU power scheme governor.
     CPUFREQ_GOVERNOR=ondemand
 
@@ -79,21 +79,16 @@ config-offline() {
     # Enable wireless adapter power saving?
     WIRELESS_POWER_SAVE=on
 
-    # Dim Backlight to save power? For max value (min is 0), check 
-    # /sys/class/backlight/acpi_video0/max_brightness.
-    BRIGHTNESS=12
-
-    # Disable Wake on LAN? d=disable, for all other options see man ethtool
-    WAKE_ON_LAN=d
+    # Dim backlight to save power? For max value (min is 0), check
+    # /sys/class/backlight/acpi_video*/max_brightness.
+    BACKLIGHT_BRIGHTNESS=10
 }
 
-#custom-offline() {
-#}
-
-config-online() {
+config-adp() {
     CPUFREQ_GOVERNOR=ondemand
     NMI_WATCHDOG=1
     BUS_CONTROL=on
+    #USB_AUTOSUSPEND_TIMEOUT=60
     PCIE_ASPM_POLICY=default
     LAPTOP_MODE=0
     DIRTY_RATIO=30
@@ -103,14 +98,16 @@ config-online() {
     SCSI_HOST_POLICY=max_performance
     REMOUNT_OPTIONS=relatime
     BLOCKDEV_READAHEAD=256
-    HD_POWER_MANAGEMENT=127
-    HD_SPINDOWN_TIMEOUT=120
+    HD_POWER_MANAGEMENT=254
+    HD_SPINDOWN_TIMEOUT=253
     SND_INTEL_POWER_SAVE=0
     SND_AC97_POWER_SAVE=0
     WIRELESS_POWER_SAVE=off
-    BRIGHTNESS=15
-    WAKE_ON_LAN=g
+    BACKLIGHT_BRIGHTNESS=15
 }
 
-#custom-online() {
+#custom-bat() {
+#}
+
+#custom-adp() {
 #}
