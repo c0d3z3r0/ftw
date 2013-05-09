@@ -175,7 +175,6 @@ _common() {
             opt $i $BACKLIGHT_BRIGHTNESS
         done
     fi
-
 }
 
 _state() { [[ $STATE_FILE ]] && echo $1 > $STATE_FILE; }
