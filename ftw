@@ -151,7 +151,6 @@ _common() {
 
     if [[ $WAKE_ON_LAN ]]; then
             ethtool -s eth0 wol $WAKE_ON_LAN
-        done
     fi
 }
 
