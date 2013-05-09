@@ -78,6 +78,9 @@ config-offline() {
 
     # Enable wireless adapter power saving?
     WIRELESS_POWER_SAVE=on
+
+    # Disable Wake on LAN? d=disable, for all other options see man ethtool
+    WAKE_ON_LAN=d
 }
 
 #custom-offline() {
@@ -101,6 +104,7 @@ config-online() {
     SND_INTEL_POWER_SAVE=0
     SND_AC97_POWER_SAVE=0
     WIRELESS_POWER_SAVE=off
+    WAKE_ON_LAN=g
 }
 
 #custom-online() {
