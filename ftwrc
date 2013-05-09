@@ -78,6 +78,10 @@ config-offline() {
 
     # Enable wireless adapter power saving?
     WIRELESS_POWER_SAVE=on
+
+    # Dim Backlight to save power? Check 
+    /sys/class/backlight/acpi_video0/max_brightness for max value.
+    BRIGHTNESS=11
 }
 
 #custom-offline() {
@@ -101,6 +105,7 @@ config-online() {
     SND_INTEL_POWER_SAVE=0
     SND_AC97_POWER_SAVE=0
     WIRELESS_POWER_SAVE=off
+    BRIGHTNESS=15
 }
 
 #custom-online() {

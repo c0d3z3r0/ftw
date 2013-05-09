@@ -21,6 +21,7 @@ _defaults() {
         SND_INTEL_POWER_SAVE=1
         SND_AC97_POWER_SAVE=1
         WIRELESS_POWER_SAVE=on
+        BRIGHTNESS=11
     }
     config-online() {
         CPUFREQ_GOVERNOR=ondemand
@@ -40,6 +41,7 @@ _defaults() {
         SND_INTEL_POWER_SAVE=0
         SND_AC97_POWER_SAVE=0
         WIRELESS_POWER_SAVE=off
+        BRIGHTNESS=15
     }
 }
 
@@ -146,6 +148,12 @@ _common() {
             iw dev $i set power_save $WIRELESS_POWER_SAVE
         done
     fi
+
+    if [[ $BRIGHTNESS ]]; then
+        opt /sys/class/backlight/acpi_video0/brightness $BRIGHTNESS
+    fi
+
+
 }
 
 case $1 in
