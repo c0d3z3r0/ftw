@@ -82,6 +82,9 @@ bat() {
     # Enable wireless adapter power saving?
     WIRELESS_POWER_SAVE=on
 
+    # Disable Wake on LAN? d=disable, for all other options see man ethtool
+    WAKE_ON_LAN=d
+
     # Dim backlight to save power? For max value (min is 0), check
     # /sys/class/backlight/acpi_video*/max_brightness.
     BACKLIGHT_BRIGHTNESS=10
@@ -114,6 +117,7 @@ adp() {
     SND_INTEL_POWER_SAVE=0
     SND_AC97_POWER_SAVE=0
     WIRELESS_POWER_SAVE=off
+    WAKE_ON_LAN=g
     BACKLIGHT_BRIGHTNESS=15
 
     if [[ $MODULES ]]; then
