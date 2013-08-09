@@ -44,26 +44,6 @@ _defaults() {
         WIRELESS_POWER_SAVE=on
         BACKLIGHT_BRIGHTNESS=10
     }
-    config-online() {
-        CPUFREQ_GOVERNOR=ondemand
-        NMI_WATCHDOG=1
-        BUS_CONTROL=on
-        PCIE_ASPM_POLICY=default
-        LAPTOP_MODE=0
-        DIRTY_RATIO=30
-        DIRTY_BACKGROUND_RATIO=10
-        DIRTY_EXPIRE_CENTISECS=300
-        DIRTY_WRITEBACK_CENTISECS=3000
-        SCSI_HOST_POLICY=max_performance
-        REMOUNT_OPTIONS=relatime
-        BLOCKDEV_READAHEAD=256
-        HD_POWER_MANAGEMENT=127
-        HD_SPINDOWN_TIMEOUT=120
-        SND_INTEL_POWER_SAVE=0
-        SND_AC97_POWER_SAVE=0
-        WIRELESS_POWER_SAVE=off
-        BACKLIGHT_BRIGHTNESS=15
-    }
 }
 
 _init() {
