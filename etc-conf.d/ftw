@@ -55,7 +55,9 @@ bat() {
     DIRTY_WRITEBACK_CENTISECS=6000
 
     # Policy for SCSI host adapters.
-    SCSI_HOST_POLICY=min_power
+    # Be careful with that option since it may lead to data loss on some
+    # systems
+    #SCSI_HOST_POLICY=min_power
 
     # Comma-separated list (option1,option2,etc) of mount options to be applied
     # when remounting devices.
@@ -109,7 +111,7 @@ adp() {
     DIRTY_BACKGROUND_RATIO=10
     DIRTY_EXPIRE_CENTISECS=300
     DIRTY_WRITEBACK_CENTISECS=3000
-    SCSI_HOST_POLICY=max_performance
+    #SCSI_HOST_POLICY=max_performance
     REMOUNT_OPTIONS=relatime
     BLOCKDEV_READAHEAD=256
     HD_POWER_MANAGEMENT=254

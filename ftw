@@ -13,7 +13,7 @@ _defaults() {
         DIRTY_BACKGROUND_RATIO=10
         DIRTY_EXPIRE_CENTISECS=300
         DIRTY_WRITEBACK_CENTISECS=3000
-        SCSI_HOST_POLICY=max_performance
+        #SCSI_HOST_POLICY=max_performance
         REMOUNT_OPTIONS=relatime
         BLOCKDEV_READAHEAD=256
         HD_POWER_MANAGEMENT=254
@@ -40,7 +40,7 @@ _defaults() {
         DIRTY_BACKGROUND_RATIO=1
         DIRTY_EXPIRE_CENTISECS=600
         DIRTY_WRITEBACK_CENTISECS=6000
-        SCSI_HOST_POLICY=min_power
+        #SCSI_HOST_POLICY=min_power
         REMOUNT_OPTIONS=noatime
         BLOCKDEV_READAHEAD=4096
         HD_POWER_MANAGEMENT=1
