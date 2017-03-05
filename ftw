@@ -5,6 +5,7 @@ _defaults() {
     MODULES=(uvcvideo videodev)
     adp() {
         CPUFREQ_GOVERNOR=ondemand
+        CPU_PERF_POLICY=normal
         NMI_WATCHDOG=1
         BUS_CONTROL=on
         PCIE_ASPM_POLICY=default
@@ -31,6 +32,7 @@ _defaults() {
     }
     bat() {
         CPUFREQ_GOVERNOR=ondemand
+        CPU_PERF_POLICY=powersave
         NMI_WATCHDOG=0
         BUS_CONTROL=auto
         USB_AUTOSUSPEND_TIMEOUT=5
@@ -66,6 +68,10 @@ _common() {
         for i in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do
             opt $i $CPUFREQ_GOVERNOR
         done
+    fi
+
+    if [[ $CPU_PERF_POLICY ]]; then
+        x86_energy_perf_policy $CPU_PERF_POLICY
     fi
 
     if [[ $NMI_WATCHDOG ]]; then

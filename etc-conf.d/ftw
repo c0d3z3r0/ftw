@@ -20,6 +20,9 @@ bat() {
     # CPU power scheme governor.
     CPUFREQ_GOVERNOR=ondemand
 
+    # MSR perf policy
+    CPU_PERF_POLICY=performance
+
     # Execute periodic NMI interrupts to monitor CPU lock ups?
     NMI_WATCHDOG=0
 
@@ -102,6 +105,7 @@ bat() {
 
 adp() {
     CPUFREQ_GOVERNOR=ondemand
+    CPU_PERF_POLICY=performance
     NMI_WATCHDOG=1
     BUS_CONTROL=on
     #USB_AUTOSUSPEND_TIMEOUT=60
