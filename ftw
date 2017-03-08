@@ -31,7 +31,7 @@ _defaults() {
         fi
     }
     bat() {
-        CPUFREQ_GOVERNOR=ondemand
+        CPUFREQ_GOVERNOR=powersave
         CPU_PERF_POLICY=powersave
         NMI_WATCHDOG=0
         BUS_CONTROL=auto
@@ -71,6 +71,7 @@ _common() {
     fi
 
     if [[ $CPU_PERF_POLICY ]]; then
+        modprobe msr &> /dev/null
         x86_energy_perf_policy $CPU_PERF_POLICY
     fi
 
